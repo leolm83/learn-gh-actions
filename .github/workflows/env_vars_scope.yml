@@ -1,0 +1,25 @@
+name: Env Var Scopes
+run-name: Deploy to ${{ github.ref_name }} by @${{ github.actor }}
+on:
+  workflow_dispatch: # evento que iniciará a execucao da pipeline
+env:
+  WORKFLOW_VAR: "variavel com escopo do WORKFLOW"
+jobs:
+  job1: # job name
+    runs-on: ubuntu-24.04  # OS do ambiente de execucao do Job
+    env:
+      JOB_VAR: "variavel com escopo do JOB"
+    steps:
+      - run: |  
+          echo "WORKFLOW_VAR: $WORKFLOW_VAR"
+          echo "JOB_VAR: $JOB_VAR"
+          echo "STEP_VAR: $STEP_VAR"
+        env:
+          STEP_VAR: "variavel com escopo do STEP"
+  job-2: # job name
+    runs-on: ubuntu-24.04  # OS do ambiente de execucao do Job
+    steps:
+      - run: |  
+          echo "WORKFLOW_VAR: $WORKFLOW_VAR"
+          echo "JOB_VAR: $JOB_VAR"
+          echo "STEP_VAR: $STEP_VAR"
