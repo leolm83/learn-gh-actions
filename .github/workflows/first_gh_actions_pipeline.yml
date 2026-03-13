@@ -1,5 +1,5 @@
 name: Hello World
-run-name: Deploy to ${{ github.ref }} by @${{ github.actor }}
+run-name: Deploy to ${{ github.ref_name }} by @${{ github.actor }}
 on:
   workflow_dispatch: # evento que iniciará a execucao da pipeline
 
