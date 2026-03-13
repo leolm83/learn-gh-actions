@@ -1,0 +1,21 @@
+name: Types of Steps
+run-name: Deploy to ${{ github.ref_name }} by @${{ github.actor }}
+on:
+  workflow_dispatch: # evento que iniciará a execucao da pipeline
+
+jobs:
+  say-hello-inline-bash: # job name
+    runs-on: ubuntu-24.04  # OS do ambiente de execucao do Job
+    steps:
+      - run: echo "Hello world"
+  say-hello-inline-python: # job name
+    runs-on: ubuntu-24.04  # OS do ambiente de execucao do Job
+    steps:
+      - run: print("Hello world")
+        shell: python
+  say-hello-with-action: # job name
+    runs-on: ubuntu-24.04  # OS do ambiente de execucao do Job
+    steps:
+      - uses: actions/hello-world-javascript-action@v1.1
+        with:
+          who-to-greet: "World"
