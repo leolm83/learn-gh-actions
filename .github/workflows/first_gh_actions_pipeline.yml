@@ -1,0 +1,10 @@
+name: Hello World
+
+on:
+  workflow_dispatch: # evento que iniciará a execucao da pipeline
+
+jobs:
+  say-hello-inline-bash: # job name
+    runs-on: ubuntu-24.04  # OS do ambiente de execucao do Job
+    steps:
+      - run: echo "Hello world"
