@@ -1,4 +1,4 @@
-name: Types of Steps
+name: Jobs with dependencies
 run-name: Deploy to ${{ github.ref_name }} by @${{ github.actor }}
 on:
   workflow_dispatch: # evento que iniciará a execucao da pipeline
